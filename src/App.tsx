@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 
 interface Quote {
@@ -9,21 +8,22 @@ interface Quote {
 
 }
 
-useEffect(() => {
-  const fetchQuote = async () => {
-    const response = await fetch('https://api.quotable.io/random')
-    const data = await response.json()
-    setQuote(data)
-  }
-  fetchQuote()
-
-
-
-}, [])
-
-
 
 function App() {
+
+  useEffect(() => {
+    const fetchQuote = async () => {
+      const result = await fetch("https://usu-quotes-mimic.vercel.app/api/random");
+      console.log(await result.json()); 
+      const data = await result.json() as Quote;
+      setQuote(data)
+    }
+    fetchQuote()
+  }, [])
+
+ 
+
+
   const [quote, setQuote] = useState<Quote | null>(null)
 
   return (
