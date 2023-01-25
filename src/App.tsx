@@ -1,5 +1,12 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+
+let ID_COUNT = 0;
+
+interface Todo {
+  id: number;
+  description: string;
+  completed: boolean;
+}
 
 interface Quote {
   _id: string
@@ -8,8 +15,18 @@ interface Quote {
 
 }
 
-
 function App() {
+  const [author, setAuthor] = useState<string>("")
+
+
+  function fetchQuote(searchAuthor: string) {
+    fetch("https://usu-quotes-mimic.vercel.app/api/" + searchAuthor)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      setQuote(data);
+    })
+  }
 
   useEffect(() => {
     const fetchQuote = async () => {
@@ -27,9 +44,26 @@ function App() {
   const [quote, setQuote] = useState<Quote | null>(null)
 
   return (
-    <div className="App">
-      
-    </div>
+          <div>
+            <h1>Random Quote</h1>
+            <div>
+              <input type="text"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}/>
+                <button onClick={() => {
+                  console.log(author);
+                  console.log(fetchQuote(author));
+                }
+                  
+
+                  }>Search</button>
+                  
+              
+            </div>
+            
+            
+            
+          </div>
   )
 }
 

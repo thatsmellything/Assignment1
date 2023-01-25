@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-    <script type="module" crossorigin src="./assets/index-689e5247.js"></script>
-    <link rel="stylesheet" href="./assets/index-3fce1f81.css">
+    
+    <title>Quote Search</title>
+    <script type="module" crossorigin src="./assets/index-666e4625.js"></script>
+    <link rel="stylesheet" href="./assets/index-c277f549.css">
   </head>
   <body>
-    <div id="root"></div>
-    
+    <div id="root">
+      <main class="main-container">
+        <h1 class="mainHeader">Quote Search</h1>
+        <form class="search-container">
+          <input type="text" class="search-input" placeholder="Search for a quote" />
+          <!--When button is clicked, run the App function in App.tsx-->
+          <button class="search-button" type="button" onclick="App()">Search</button>
+          
+        </form>
+        <section class="home-quote">
+          <!-- put random quote here that will disappear once a author is seached for -->
+        </section>
+        <section class="search-results">
+          <!-- put search results here -->
+        </section>
+        
+      </main>
+    </div>
+
   </body>
 </html>
