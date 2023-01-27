@@ -58,6 +58,8 @@ function App() {
     //for each element in the document, if the id matches the id passed in, set the background color to the color passed in
     document.querySelectorAll("#singleQuote").forEach((elem) => {
       elem.style.backgroundColor = sColor;
+      elem.style.border = "1px solid black";
+      //elem.style.border-radius = "5px";
     })
    }
 
@@ -84,7 +86,7 @@ function App() {
   return (
           
           <div id="everything">
-            <h1>Random Quote</h1>
+            <h1>Quote Search</h1>
             <div>
               {/* text input for the author search */}
               <input type="text"
