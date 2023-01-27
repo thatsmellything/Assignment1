@@ -53,15 +53,7 @@ function App() {
       return returnMe;
   }
 
-  function setBgColorById(id: string,sColor: string) {
-    var elem;
-    //for each element in the document, if the id matches the id passed in, set the background color to the color passed in
-    document.querySelectorAll("#singleQuote").forEach((elem) => {
-      elem.style.backgroundColor = sColor;
-      elem.style.border = "1px solid black";
-      //elem.style.border-radius = "5px";
-    })
-   }
+ 
 
 
  
@@ -70,7 +62,7 @@ function App() {
     randomQuote().then((data) => {
       //put the data into the div with id quotes
       document.getElementById("quotes")!.innerHTML = data;
-      setBgColorById("singleQuote", "gray");
+      
     })
   }, [])
 
@@ -100,7 +92,7 @@ function App() {
                   fetchQuote(author).then((data) => {
                     //put the data into the div with id quotes
                     document.getElementById("quotes")!.innerHTML = data;
-                    setBgColorById("singleQuote", "gray");
+                    
                   })
                   
                 }
