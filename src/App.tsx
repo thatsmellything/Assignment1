@@ -84,14 +84,13 @@ function App() {
                   fetchQuote(author).then((data) => {
                     //put the data into the div with id quotes
                     document.getElementById("quotes")!.innerHTML = data;
-                    
                   })
-                  
                 }
                   }>Search</button>
               {/* div to hold the quotes */}
               <div id="quotes"></div>
             </div>
+            <h6>By: Jensen Judkins</h6>
           </div>
   )
 }
